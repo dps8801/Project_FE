@@ -1,0 +1,75 @@
+body {
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-right: 40px;
+    margin-left: 40px;
+    background-color: #ff53f6bb;
+    color: #000000;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+  }
+
+  h1, p {
+    text-align: center;
+  }
+
+  fieldset {
+    border-color: #000000;
+    padding: 8mm;
+    background-color: #ffffff;
+  }
+  form {
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+    
+  fieldset:not(:last-of-type) {
+    border-bottom: 3px solid #3b3b4f;
+  }
+  
+  label {
+    display: block;
+    margin: 0.5rem 0;
+  }
+  
+  input,
+  textarea,
+  select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+  }
+  
+  input, textarea {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    color: #000000;
+  }
+  
+  .inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 10%;
+    margin: 1em auto;
+    height: 2em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.1rem;
+    color: #ffffff;
+    background-color: #0026ff;
+    border-color: rgb(0, 0, 0);
+    min-width: 200px;
+  }
+  
+  input[type="file"] {
+    padding: 1px 2px;
+  }
+  
+  a {
+    color: #3e5bff;
+  }

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <form>
+    <fieldset>
+        <h1>Registration Form</h1>
+        <p>Please fill the form with appropriate details.</p>
+    </fieldset>
+   </form>
+    <form action="https://www.google.com/">
+        <fieldset>
+            <label>
+                First Name:
+                <input type="text" name="first-name" required/>
+            </label>
+            <label>
+                Last Name:
+                <input type="text" name="last-name" required/>
+            </label>
+            <label>
+                Age:
+                <input type="number" name="number" required/>
+            </label>
+            <label>
+                Email:
+                <input type="email" name="email" required/>
+            </label>
+            <label>
+                Create a New Password:
+                <input type="password" name="password" required/>
+            </label>
+            <label>
+                Enter the New Password Again:
+                <input type="password" name="password" required/>
+            </label>
+        </fieldset>         
+    </form>
+        <form>
+        <fieldset>
+            <label>
+                Upload your picture:
+                <input type="file" name="file" required/>
+            </label>
+            <label>
+                Upload your resume:
+                <input type="file" name="file" required/>
+            </label>
+            <label>How did you hear about us?
+                <select name="referrer">
+                  <option value="">(select one)</option>
+                  <option value="1">Internet</option>
+                  <option value="2">YouTube</option>
+                  <option value="3">LinkedIn</option>
+                  <option value="4">Twitter</option>
+                  <option value="5">Other</option>
+                </select>
+              </label>
+              <label>Describe About yourself in few lines:
+                <textarea name="bio" rows="3" cols="30" placeholder="Write Something about you..."></textarea>
+              </label>
+        </fieldset>
+    </form>
+        <form>
+        <fieldset>
+            <label>
+              <input type="checkbox" name="terms" class="inline" required /> I accept the 
+              <a href="https://policies.google.com/terms?hl=en-IN&fg=1">Terms and Conditions</a>
+            </label>
+          </fieldset>
+          <input type="submit" value="Submit" />
+    </form>
+    
+</body>
+</html>
