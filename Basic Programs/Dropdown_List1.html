@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown List</title>
+</head>
+<body>
+    <h1 align="center">Please Select Your Country!</h1>
+    <div style="text-align: center;">
+        <img src="https://iphotos.com/thumbs.php?f=/014/batch_01/flying2_01_tnb.png" alt="Ballon man">
+    </div>
+    <form action="">
+        <p align="center">My roots are from</p>
+        <br>
+        <div style="text-align: center;">
+        <select id="sco1" onchange="update()">
+            <option>Country</option> 
+            <option>United States</option>
+            <option>Canada</option>
+             <option>China</option>
+             <option>Germany</option>
+             <option>Japan</option>
+             <option>France</option>
+             <option>United Kingdom</option>
+             <option>Australia</option>
+             <option>India</option>
+             <option>Italy</option>
+             <option>Switzerland</option>
+             <option>Russia</option>
+             <option>Netherlands</option>
+             <option>Sweden</option>
+             <option>Spain</option>
+             <option>South Africa</option>
+             <option>New Zealand</option>
+             <option>Greece</option>
+             <option>Sri Lanka</option>
+             <option>Nepal</option>
+            </select>
+            <input id="sco2" type="text">
+            <button onclick="sco3()">Filter</button>
+            <script>
+                function sco3()
+                {
+                    var sco1 = document.getElementById("sco1").textContent;
+                    var con;
+                    con= sco1;
+                    document.getElementById("sco2").innerHTML= con;
+                }
+                
+
+            </script>
+    </div>
+    </form>
+   
+</body>
+</html>
