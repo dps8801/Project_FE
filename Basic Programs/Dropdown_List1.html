@@ -8,50 +8,91 @@
 <body>
     <h1 align="center">Please Select Your Country!</h1>
     <div style="text-align: center;">
-        <img src="https://iphotos.com/thumbs.php?f=/014/batch_01/flying2_01_tnb.png" alt="Ballon man">
+        <img src="https://iphotos.com/thumbs.php?f=/014/batch_01/flying2_01_tnb.png" alt="Balloon man">
     </div>
     <form action="">
         <p align="center">My roots are from</p>
         <br>
         <div style="text-align: center;">
-        <select id="sco1" onchange="update()">
-            <option>Country</option> 
-            <option>United States</option>
-            <option>Canada</option>
-             <option>China</option>
-             <option>Germany</option>
-             <option>Japan</option>
-             <option>France</option>
-             <option>United Kingdom</option>
-             <option>Australia</option>
-             <option>India</option>
-             <option>Italy</option>
-             <option>Switzerland</option>
-             <option>Russia</option>
-             <option>Netherlands</option>
-             <option>Sweden</option>
-             <option>Spain</option>
-             <option>South Africa</option>
-             <option>New Zealand</option>
-             <option>Greece</option>
-             <option>Sri Lanka</option>
-             <option>Nepal</option>
+            <select id="sco1" onchange="update()">
+                <option>Country</option>
+                <option>United States</option>
+                <option>Canada</option>
+                <option>China</option>
+                <option>Germany</option>
+                <option>Japan</option>
+                <option>France</option>
+                <option>United Kingdom</option>
+                <option>Australia</option>
+                <option>India</option>
+                <option>Italy</option>
+                <option>Switzerland</option>
+                <option>Russia</option>
+                <option>Netherlands</option>
+                <option>Sweden</option>
+                <option>Spain</option>
+                <option>South Africa</option>
+                <option>New Zealand</option>
+                <option>Greece</option>
+                <option>Sri Lanka</option>
+                <option>Nepal</option>
             </select>
-            <input id="sco2" type="text">
-            <button onclick="sco3()">Filter</button>
+            <input id="sco2" type="text" oninput="suggestCountries()"> <button>Filter</button>
+            <ul id="suggestions" style="list-style-type: none;"></ul>
+           
             <script>
-                function sco3()
-                {
-                    var sco1 = document.getElementById("sco1").textContent;
-                    var con;
-                    con= sco1;
-                    document.getElementById("sco2").innerHTML= con;
+                function update() {
+                    var selectedCountry = document.getElementById("sco1").value;
+                    document.getElementById("sco2").value = selectedCountry;
                 }
-                
 
+                var countries = [
+                    "United States",
+                    "Canada",
+                    "China",
+                    "Germany",
+                    "Japan",
+                    "France",
+                    "United Kingdom",
+                    "Australia",
+                    "India",
+                    "Italy",
+                    "Switzerland",
+                    "Russia",
+                    "Netherlands",
+                    "Sweden",
+                    "Spain",
+                    "South Africa",
+                    "New Zealand",
+                    "Greece",
+                    "Sri Lanka",
+                    "Nepal"
+                ];
+
+                function suggestCountries() {
+                    var input = document.getElementById("sco2").value;
+                    var suggestions = document.getElementById("suggestions");
+
+                    suggestions.innerHTML = "";
+
+                    if (input) {
+                        for (var i = 0; i < countries.length; i++) {
+                            if (countries[i].toLowerCase().includes(input.toLowerCase())) {
+                                var suggestion = document.createElement("li");
+                                suggestion.textContent = countries[i];
+                                suggestion.addEventListener("click", function() {
+                                    document.getElementById("sco2").value = this.textContent;
+                                    suggestions.innerHTML = "";
+                                });
+                                suggestions.appendChild(suggestion);
+                            }
+                        }
+                    } else {
+                        suggestions.innerHTML = "";
+                    }
+                }
             </script>
-    </div>
+        </div>
     </form>
-   
 </body>
 </html>
