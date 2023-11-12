@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time Display</title>
+</head>
+<body>
+    <h1 align="center">Displaying Date and Time</h1>
+    <div style="text-align: center;">
+    <img src="https://cdn.dribbble.com/users/789033/screenshots/3685590/waiting.gif" alt="Date and Time" width="520" height="400">
+    <p id="date"></p>
+    <p id="time"></p>
+
+    <script>
+        const date = new Date();
+        const n = date.toDateString();
+        const time = date.toLocaleTimeString();
+        document.getElementById('date').textContent = 'Date: ' + n;
+        document.getElementById('time').textContent = 'Time: ' + time;
+    </script>
+    </div>
+</body>
+</html>
