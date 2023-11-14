@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Zone Converter</title>
+</head>
+<body>
+    <h1 align="center">Time Zone Converter</h1>
+    <div style="text-align: center;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Alarm_Clock_GIF_Animation_High_Res.gif" alt="Clock" width="250" height="210" >
+    </div>
+    <div style="text-align: center;">
+<label for="timezone">Select Time Zone:</label>
+<select id="timezone" onchange="updateTime()">
+  <option value="Local">Local</option>
+  <option value="America/New_York">New York</option>
+  <option value="Europe/London">London</option>
+  <option value="Asia/Tokyo">Tokyo</option>
+  <option value="Asia/Singapore">Singapore</option>
+  <option value="America/Havana">Havana</option>
+  <option value="America/Panama">Panama</option>
+  <option value="Europe/Moscow">Moscow</option>
+  <option value="Asia/Qatar">Qatar</option>
+  <option value="Europe/Berlin">Berlin</option>
+</div>
+</select>
+
+<div id="current-time" style="text-align: center;"></div>
+<div id="converted-time" style="text-align: center;"></div>
+
+<script>
+function updateTime() {
+  const selectedTimeZone = document.getElementById('timezone').value;
+  const currentDate = new Date();
+  const currentDateString = currentDate.toLocaleString();
+  document.getElementById('current-time').innerHTML = "Current Time"+currentDateString;
+  const options = { timeZone: selectedTimeZone, hour12: false, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+  const convertedDateString = currentDate.toLocaleString('en-US', options);
+  document.getElementById('converted-time').innerHTML = "Converted Time:" +convertedDateString;
+}
+updateTime();
+</script>
+
+</body>
+</html>
