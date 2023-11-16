@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods Example</title>
+</head>
+<body>
+
+<div id="output-container">
+    <h2>Array and Array Methods Output:</h2>
+    <pre id="array-output"></pre>
+</div>
+
+<script>
+    let myArray = [1, 2, 3, 4];
+    displayArray(myArray);
+
+    console.log("Array length:", myArray.length);
+    displayArray(["Array length: " + myArray.length]);
+
+    console.log("Array toString():", myArray.toString());
+    displayArray(["Array toString(): " + myArray.toString()]);
+
+    console.log("Array pop():", myArray.pop());
+    displayArray(["Array pop(): " + myArray]);
+
+    myArray.push(5);
+    console.log("Array push():", myArray);
+    displayArray(["Array push(): " + myArray]);
+
+    console.log("Array shift():", myArray.shift());
+    displayArray(["Array shift(): " + myArray]);
+
+    myArray.unshift(0);
+    console.log("Array unshift():", myArray);
+    displayArray(["Array unshift(): " + myArray]);
+
+    console.log("Array join():", myArray.join('-'));
+    displayArray(["Array join(): " + myArray.join('-')]);
+
+    delete myArray[1];
+    console.log("Array delete():", myArray);
+    displayArray(["Array delete(): " + myArray]);
+
+    let newArray = myArray.concat([6, 7, 8]);
+    console.log("Array concat():", newArray);
+    displayArray(["Array concat(): " + newArray]);
+
+    let nestedArray = [1, [2, 3], [4, [5, 6]]];
+    let flatArray = nestedArray.flat(2);
+    console.log("Array flat():", flatArray);
+    displayArray(["Array flat(): " + flatArray]);
+
+    let splicedArray = myArray.splice(1, 2, 10, 11);
+    console.log("Array splice():", myArray);
+    displayArray(["Array splice(): " + myArray]);
+
+    let slicedArray = myArray.slice(1, 3);
+    console.log("Array slice():", slicedArray);
+    displayArray(["Array slice(): " + slicedArray]);
+
+    function displayArray(lines) {
+        document.getElementById('array-output').textContent += lines.join('\n') + '\n';
+    }
+</script>
+
+</body>
+</html>
