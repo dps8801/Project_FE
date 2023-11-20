@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Methods Example</title>
+</head>
+<body>
+  <div id="output"></div>
+
+  <script>
+       const originalString = "   Hello, World!   ";
+    const lengthResult = originalString.length;
+    const sliceResult = originalString.slice(3, 8);
+    const substringResult = originalString.substring(3, 8);
+    const substrResult = originalString.substr(3, 5);
+    const replaceResult = originalString.replace("World", "Universe");
+    const replaceAllResult = originalString.replaceAll("o", "0");
+    const toUpperCaseResult = originalString.toUpperCase();
+    const toLowerCaseResult = originalString.toLowerCase();
+    const concatResult = originalString.concat(" Welcome!");
+    const trimResult = originalString.trim();
+    const trimStartResult = originalString.trimStart();
+    const trimEndResult = originalString.trimEnd();
+    const padStartResult = originalString.padStart(20, '*');
+    const padEndResult = originalString.padEnd(20, '*');
+    const charAtResult = originalString.charAt(7);
+    const charCodeAtResult = originalString.charCodeAt(7);
+    const splitResult = originalString.split(',');
+    const outputElement = document.getElementById('output');
+
+    outputElement.innerHTML += `<p>Original String: "${originalString}"</p>`;
+    outputElement.innerHTML += `<p>String Length: ${lengthResult}</p>`;
+    outputElement.innerHTML += `<p>Slice: "${sliceResult}"</p>`;
+    outputElement.innerHTML += `<p>Substring: "${substringResult}"</p>`;
+    outputElement.innerHTML += `<p>Substr: "${substrResult}"</p>`;
+    outputElement.innerHTML += `<p>Replace: "${replaceResult}"</p>`;
+    outputElement.innerHTML += `<p>Replace All: "${replaceAllResult}"</p>`;
+    outputElement.innerHTML += `<p>To Upper Case: "${toUpperCaseResult}"</p>`;
+    outputElement.innerHTML += `<p>To Lower Case: "${toLowerCaseResult}"</p>`;
+    outputElement.innerHTML += `<p>Concat: "${concatResult}"</p>`;
+    outputElement.innerHTML += `<p>Trim: "${trimResult}"</p>`;
+    outputElement.innerHTML += `<p>Trim Start: "${trimStartResult}"</p>`;
+    outputElement.innerHTML += `<p>Trim End: "${trimEndResult}"</p>`;
+    outputElement.innerHTML += `<p>Pad Start: "${padStartResult}"</p>`;
+    outputElement.innerHTML += `<p>Pad End: "${padEndResult}"</p>`;
+    outputElement.innerHTML += `<p>Char At: "${charAtResult}"</p>`;
+    outputElement.innerHTML += `<p>Char Code At: ${charCodeAtResult}</p>`;
+    outputElement.innerHTML += `<p>Split: [${splitResult.join(', ')}]</p>`;
+  </script>
+</body>
+</html>
