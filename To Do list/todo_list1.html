@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+    <H1 align="center">To Do List</H1>
+<div style="text-align: center;">
+  <form id="labelForm">
+    <label for="textInput">Enter Text:</label>
+    <input type="text" id="textInput" required>
+    <button type="button" onclick="addLabel()">Submit</button>
+  </form>
+  <div id="labelContainer"></div>
+
+  <script>
+    function addLabel() {
+      var textInput = document.getElementById("textInput");
+      var labelText = textInput.value;
+      var label = document.createElement("label");
+      var textSpan = document.createElement("span");
+      textSpan.textContent = labelText;
+      var deleteButton = document.createElement("button");
+      deleteButton.textContent = "Delete";
+      deleteButton.onclick = function() {
+        label.remove();
+      };
+      var editButton = document.createElement("button");
+      editButton.textContent = "Edit";
+      editButton.onclick = function() {
+        var newText = prompt("Edit the label:", textSpan.textContent);
+        if (newText !== null) {
+          textSpan.textContent = newText;
+        }
+      };
+      label.style.display = "block";
+
+      label.appendChild(textSpan);
+      label.appendChild(deleteButton);
+      label.appendChild(editButton);
+      document.getElementById("labelContainer").appendChild(label);
+      textInput.value = "";
+    }
+  </script>
+</div>
+</body>
+</html>
